@@ -1,4 +1,9 @@
-*.sublime-project
 *.sublime-workspace
+server.js
+npm-debug.log
 node_modules
 public/bower_components
+/data
+public/css
+public/js
+public/*.html

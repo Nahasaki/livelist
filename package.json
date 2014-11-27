@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/Nahasaki/livelist.git"
   },
-  "author": "Nahasaki",
+  "author": "Myroslav Tantsyura",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Nahasaki/livelist/issues"
@@ -19,8 +19,23 @@
   "dependencies": {
     "body-parser": "^1.9.0",
     "express": "^4.9.7",
+    "jade": "^1.7.0",
     "method-override": "^2.2.0",
-    "mongoose": "^3.8.17",
-    "morgan": "^1.3.2"
+    "nedb": "^0.11.1"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "grunt": "^0.4.5",
+    "gulp": "^3.8.9",
+    "gulp-coffee": "^2.2.0",
+    "gulp-concat": "^2.4.1",
+    "gulp-jade": "^0.9.0",
+    "gulp-less": "^1.3.6",
+    "gulp-livereload": "^2.1.1",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-stylus": "^1.3.4",
+    "gulp-util": "^3.0.1",
+    "kouto-swiss": "^0.11.2",
+    "tiny-lr": "^0.1.4"
   }
 }

@@ -1,0 +1,85 @@
+doctype
+html(ng-app='livelist')
+	head
+		meta(charset='UTF-8')
+		title Livelist
+		link(rel="stylesheet" href="css/main.css")
+
+	body(ng-controller="mainController")
+		.container
+			table.list-table
+				thead
+					tr
+						th
+						th.appId #
+						//- th.index ПП
+						th.name Учасник
+						th.source Джерело
+						th.title Виступ
+						th.duration Тривалість
+						th.description Опис
+						//- th.position
+						//- th.readyStatus Готовність
+						//- th.moved
+						th.actions Статус
+				tbody(as-sortable="board.sortable" ng-model="items")
+					tr(ng-repeat="item in items" as-sortable-item)
+						td(as-sortable-item-handle)
+							a() up 
+							a() down
+						td.appId
+							div {{item.appId}}
+						//- td.index
+						//- 	div {{item.index}}
+						td.name
+							div {{item.name}}
+						td.source
+							div {{item.source}}
+						td.title
+							div {{item.title}}
+						td.duration
+							div {{item.duration}}
+						td.description
+							div {{item.description}}
+						//- td.position
+							div {{item.position}}
+						td.readyStatus
+							div {{item.readyStatus}}
+						//- td.moved
+							div {{item.moved}}
+						//- td.actions
+							a
+
+			.new-item-form
+				form
+					.form-group
+						label(for='newItem_appId') Id
+						input#newItem_appId(type='text' ng-model="newItem.appId")
+					//- .form-group
+					//- 	label(for='newItem_index') Id
+					//- 	input#newItem_index(type='text' ng-model="newItem")
+					.form-group
+						label(for='newItem_name') Name
+						input#newItem_name(type='text' ng-model="newItem.name")
+					.form-group
+						label(for='newItem_source') Source
+						input#newItem_source(type='text' ng-model="newItem.source")
+					.form-group
+						label(for='newItem_title') Title
+						input#newItem_title(type='text' ng-model="newItem.title")
+					.form-group
+						label(for='newItem_duration') Duration
+						input#newItem_duration(type='text' ng-model="newItem.duration")
+					.form-group
+						label(for='newItem_description') Description
+						textarea#newItem_description(type='text' ng-model="newItem.description")
+					.form-submit
+						button(type='submit' ng-click="createNewItem()") Add
+
+				button.button-sort(ng-click="sortItems()") Sort
+			
+		script(src='bower_components/jquery/dist/jquery.js')
+		script(src='bower_components/angularjs/angular.min.js')
+		script(src='js/master.js')
+		script(src='js/core.js')
+		script(src='http://127.0.0.1:35729/livereload.js')
